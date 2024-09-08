@@ -2,12 +2,17 @@
 #define REDHEADDUCK_H
 
 #include "Duck.h"
+#include "Dance/DanceMinuet.h"
 #include "Fly/FlyWithWings.h"
 #include "Quack/QuackBehavior.h"
 
 class RedheadDuck final : public Duck {
 public:
-    RedheadDuck() : Duck(std::make_unique<FlyWithWings>(), std::make_unique<QuackBehavior>()) {
+    RedheadDuck() : Duck(
+        std::make_unique<FlyWithWings>(),
+        std::make_unique<QuackBehavior>(),
+        std::make_unique<DanceMinuet>()
+    ) {
     };
 
     void Display() const override {

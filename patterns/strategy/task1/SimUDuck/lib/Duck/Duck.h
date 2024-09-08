@@ -5,14 +5,20 @@
 #include <iostream>
 #include <memory>
 
+#include "Dance/IDanceBehavior.h"
 #include "Fly/IFlyBehavior.h"
 #include "Quack/IQuackBehavior.h"
 
 class Duck {
 public:
-    Duck(std::unique_ptr<IFlyBehavior> &&flyBehavior, std::unique_ptr<IQuackBehavior> &&quackBehavior)
-        : m_quackBehavior(std::move(quackBehavior)) {
+    Duck(
+        std::unique_ptr<IFlyBehavior> &&flyBehavior,
+        std::unique_ptr<IQuackBehavior> &&quackBehavior,
+        std::unique_ptr<IDanceBehavior> &&danceBehavior
+    ) : m_quackBehavior(std::move(quackBehavior)),
+        m_danceBehavior(std::move(danceBehavior)) {
         assert(m_quackBehavior);
+        assert(m_danceBehavior);
         SetFlyBehavior(std::move(flyBehavior));
     };
 
@@ -21,20 +27,23 @@ public:
         m_flyBehavior = std::move(flyBehavior);
     }
 
-    void Quack() const {
-        m_quackBehavior->Quack();
-    }
-
     void Fly() const {
         m_flyBehavior->Fly();
     }
 
-    static void Swim() {
-        std::cout << "I'm swimming!" << std::endl;
+    void Quack() const {
+        m_quackBehavior->Quack();
     }
 
-    virtual void Dance() {
-        std::cout << "I'm dancing!" << std::endl;
+    /**
+     * Метод `Dance` должен быть константным, потому что выполнение танца не должно изменять состояние объекта.
+     */
+    void Dance() const {
+        m_danceBehavior->Dance();
+    }
+
+    static void Swim() {
+        std::cout << "I'm swimming!" << std::endl;
     }
 
     virtual void Display() const = 0;
@@ -44,6 +53,7 @@ public:
 private:
     std::unique_ptr<IFlyBehavior> m_flyBehavior;
     std::unique_ptr<IQuackBehavior> m_quackBehavior;
+    std::unique_ptr<IDanceBehavior> m_danceBehavior;
 };
 
 #endif //DUCK_H
