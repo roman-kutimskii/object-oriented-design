@@ -1,0 +1,22 @@
+add_executable(
+        SimUDuck
+        SimUDuck/SimUDuck.cpp
+        SimUDuck/lib/DuckFunctions.h
+        SimUDuck/lib/Duck/Dance/DanceMinuet.h
+        SimUDuck/lib/Duck/Dance/DanceNoWay.h
+        SimUDuck/lib/Duck/Dance/DanceWaltz.h
+        SimUDuck/lib/Duck/Dance/IDanceBehavior.h
+        SimUDuck/lib/Duck/DecoyDuck.h
+        SimUDuck/lib/Duck/Duck.h
+        SimUDuck/lib/Duck/Fly/FlyNoWay.h
+        SimUDuck/lib/Duck/Fly/FlyWithWings.h
+        SimUDuck/lib/Duck/Fly/IFlyBehavior.h
+        SimUDuck/lib/Duck/MallardDuck.h
+        SimUDuck/lib/Duck/ModelDuck.h
+        SimUDuck/lib/Duck/Quack/IQuackBehavior.h
+        SimUDuck/lib/Duck/Quack/MuteQuackBehavior.h
+        SimUDuck/lib/Duck/Quack/QuackBehavior.h
+        SimUDuck/lib/Duck/Quack/SqueakBehavior.h
+        SimUDuck/lib/Duck/RedheadDuck.h
+        SimUDuck/lib/Duck/RubberDuck.h
+)
