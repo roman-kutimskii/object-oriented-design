@@ -4,6 +4,7 @@
 #include <functional>
 #include <iostream>
 
+// Объявить разные using
 using Behavior = std::function<void()>;
 
 class Duck {

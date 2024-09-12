@@ -5,6 +5,7 @@
 
 #include "IFlyBehavior.h"
 
+// Как сделать так, чтобы летающие утки каждый второй полёт отмечали кряканием?
 class FlyWithWingsAndCount final : public IFlyBehavior {
 public:
     void Fly() override {

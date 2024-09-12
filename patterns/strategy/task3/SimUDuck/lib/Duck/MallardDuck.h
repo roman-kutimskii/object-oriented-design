@@ -8,7 +8,8 @@
 
 class MallardDuck final : public Duck {
 public:
-    MallardDuck() : Duck(CreateFlyWithWings(), QuackQuack, DanceWaltz) {
+    // Придумать, чтобы ошибка не оставалась незамеченной.
+    MallardDuck() : Duck(CreateFlyWithWings, QuackQuack, DanceWaltz) {
     };
 
     void Display() const override {

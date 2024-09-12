@@ -10,7 +10,7 @@
 #include "Dance/IDanceBehavior.h"
 #include "Fly/IFlyBehavior.h"
 #include "Quack/IQuackBehavior.h"
-
+// Показать на диаграмме, кто использует классы конкретных стратегий
 class Duck {
 public:
     Duck(
