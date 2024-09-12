@@ -1,3 +1,4 @@
+// ReSharper disable CppMemberFunctionMayBeConst
 #ifndef DUCK_H
 #define DUCK_H
 
@@ -27,18 +28,15 @@ public:
         m_flyBehavior = std::move(flyBehavior);
     }
 
-    void Fly() const {
+    void Fly() {
         m_flyBehavior->Fly();
     }
 
-    void Quack() const {
+    void Quack() {
         m_quackBehavior->Quack();
     }
 
-    /**
-     * Метод `Dance` должен быть константным, потому что выполнение танца не должно изменять состояние объекта.
-     */
-    void Dance() const {
+    void Dance() {
         m_danceBehavior->Dance();
     }
 
