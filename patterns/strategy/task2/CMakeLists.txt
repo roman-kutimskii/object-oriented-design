@@ -10,6 +10,7 @@ add_executable(
         SimUDuck/lib/Duck/Duck.h
         SimUDuck/lib/Duck/Fly/FlyNoWay.h
         SimUDuck/lib/Duck/Fly/FlyWithWings.h
+        SimUDuck/lib/Duck/Fly/FlyWithWingsAndCount.h
         SimUDuck/lib/Duck/Fly/IFlyBehavior.h
         SimUDuck/lib/Duck/MallardDuck.h
         SimUDuck/lib/Duck/ModelDuck.h

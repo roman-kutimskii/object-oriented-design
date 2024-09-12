@@ -1,4 +1,5 @@
 // ReSharper disable CppMemberFunctionMayBeConst
+// ReSharper disable CppMemberFunctionMayBeStatic
 #ifndef DUCK_H
 #define DUCK_H
 
@@ -40,7 +41,7 @@ public:
         m_danceBehavior->Dance();
     }
 
-    static void Swim() {
+    void Swim() {
         std::cout << "I'm swimming!" << std::endl;
     }
 
