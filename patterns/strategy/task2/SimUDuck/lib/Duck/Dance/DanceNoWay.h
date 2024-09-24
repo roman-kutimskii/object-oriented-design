@@ -3,9 +3,11 @@
 
 #include "IDanceBehavior.h"
 
-class DanceNoWay final : public IDanceBehavior {
+class DanceNoWay final : public IDanceBehavior
+{
 public:
-    void Dance() override {
+    void Dance() override
+    {
     };
 };
 

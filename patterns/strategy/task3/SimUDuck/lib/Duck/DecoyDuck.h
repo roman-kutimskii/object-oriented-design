@@ -3,12 +3,15 @@
 
 #include "Duck.h"
 
-class DecoyDuck final : public Duck {
+class DecoyDuck final : public Duck
+{
 public:
-    DecoyDuck() : Duck(nullptr, nullptr, nullptr) {
+    DecoyDuck() : Duck(nullptr, nullptr, nullptr)
+    {
     };
 
-    void Display() const override {
+    void Display() const override
+    {
         std::cout << "I'm a decoy duck!" << std::endl;
     }
 };

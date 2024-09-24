@@ -5,7 +5,8 @@
 #include "lib/Duck/RedheadDuck.h"
 #include "lib/Duck/RubberDuck.h"
 
-int main() {
+int main()
+{
     MallardDuck mallardDuck;
     PlayWithDuck(mallardDuck);
     PlayWithDuck(mallardDuck);

@@ -6,12 +6,15 @@
 #include "Fly/FlyFunctions.h"
 #include "Quack/QuackFunctions.h"
 
-class RedheadDuck final : public Duck {
+class RedheadDuck final : public Duck
+{
 public:
-    RedheadDuck() : Duck(CreateFlyWithWings, QuackQuack, DanceMinuet) {
+    RedheadDuck() : Duck(CreateFlyWithWings, QuackQuack, DanceMinuet)
+    {
     };
 
-    void Display() const override {
+    void Display() const override
+    {
         std::cout << "I'm a redhead duck!" << std::endl;
     };
 };

@@ -5,9 +5,11 @@
 
 #include "IQuackBehavior.h"
 
-class SqueakBehavior final : public IQuackBehavior {
+class SqueakBehavior final : public IQuackBehavior
+{
 public:
-    void Quack() override {
+    void Quack() override
+    {
         std::cout << "Squeak!" << std::endl;
     }
 };

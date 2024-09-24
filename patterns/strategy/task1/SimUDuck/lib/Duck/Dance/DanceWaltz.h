@@ -5,9 +5,11 @@
 
 #include "IDanceBehavior.h"
 
-class DanceWaltz final : public IDanceBehavior {
+class DanceWaltz final : public IDanceBehavior
+{
 public:
-    void Dance() override {
+    void Dance() override
+    {
         std::cout << "I'm dancing a waltz!" << std::endl;
     };
 };

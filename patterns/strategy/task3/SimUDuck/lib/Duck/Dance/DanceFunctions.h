@@ -3,11 +3,13 @@
 
 #include "../Duck.h"
 
-inline void DanceMinuet() {
+inline void DanceMinuet()
+{
     std::cout << "I'm dancing a minuet!" << std::endl;
 }
 
-inline void DanceWaltz() {
+inline void DanceWaltz()
+{
     std::cout << "I'm dancing a waltz!" << std::endl;
 }
 

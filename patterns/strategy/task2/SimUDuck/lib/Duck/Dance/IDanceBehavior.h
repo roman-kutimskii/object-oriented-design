@@ -1,7 +1,8 @@
 #ifndef IDANCEBEHAVIOR_H
 #define IDANCEBEHAVIOR_H
 
-struct IDanceBehavior {
+struct IDanceBehavior
+{
     virtual ~IDanceBehavior() = default;
 
     virtual void Dance() = 0;

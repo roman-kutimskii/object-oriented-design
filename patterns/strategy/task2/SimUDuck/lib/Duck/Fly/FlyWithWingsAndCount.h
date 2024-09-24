@@ -5,10 +5,13 @@
 
 #include "IFlyBehavior.h"
 
-// Как сделать так, чтобы летающие утки каждый второй полёт отмечали кряканием?
-class FlyWithWingsAndCount final : public IFlyBehavior {
+// TODO: Как сделать так, чтобы летающие утки каждый второй полёт отмечали кряканьем?
+
+class FlyWithWingsAndCount final : public IFlyBehavior
+{
 public:
-    void Fly() override {
+    void Fly() override
+    {
         ++m_flyCount;
         std::cout << "I'm flying with wings!" << std::endl << "I've done " << m_flyCount << " flight" << (
             m_flyCount > 1 ? "s" : "") << "." << std::endl;

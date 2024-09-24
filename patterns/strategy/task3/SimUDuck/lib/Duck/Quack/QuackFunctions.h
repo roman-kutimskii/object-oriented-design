@@ -3,11 +3,13 @@
 
 #include <iostream>
 
-inline void QuackQuack() {
+inline void QuackQuack()
+{
     std::cout << "Quack-quack!" << std::endl;
 }
 
-inline void QuackSqueak() {
+inline void QuackSqueak()
+{
     std::cout << "Squeak!" << std::endl;
 }
 

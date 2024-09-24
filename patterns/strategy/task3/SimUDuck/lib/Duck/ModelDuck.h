@@ -4,12 +4,15 @@
 #include "Duck.h"
 #include "Quack/QuackFunctions.h"
 
-class ModelDuck final : public Duck {
+class ModelDuck final : public Duck
+{
 public:
-    ModelDuck(): Duck(nullptr, QuackQuack, nullptr) {
+    ModelDuck(): Duck(nullptr, QuackQuack, nullptr)
+    {
     };
 
-    void Display() const override {
+    void Display() const override
+    {
         std::cout << "I'm a model duck!" << std::endl;
     };
 };

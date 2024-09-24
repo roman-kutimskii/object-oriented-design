@@ -5,9 +5,11 @@
 
 #include "IFlyBehavior.h"
 
-class FlyWithWings final : public IFlyBehavior {
+class FlyWithWings final : public IFlyBehavior
+{
 public:
-    void Fly() override {
+    void Fly() override
+    {
         std::cout << "I'm flying with wings!" << std::endl;
     };
 };

@@ -11,37 +11,44 @@
 #include "Fly/IFlyBehavior.h"
 #include "Quack/IQuackBehavior.h"
 
-class Duck {
+class Duck
+{
 public:
     Duck(
-        std::unique_ptr<IFlyBehavior> &&flyBehavior,
-        std::unique_ptr<IQuackBehavior> &&quackBehavior,
-        std::unique_ptr<IDanceBehavior> &&danceBehavior
+        std::unique_ptr<IFlyBehavior>&& flyBehavior,
+        std::unique_ptr<IQuackBehavior>&& quackBehavior,
+        std::unique_ptr<IDanceBehavior>&& danceBehavior
     ) : m_quackBehavior(std::move(quackBehavior)),
-        m_danceBehavior(std::move(danceBehavior)) {
+        m_danceBehavior(std::move(danceBehavior))
+    {
         assert(m_quackBehavior);
         assert(m_danceBehavior);
         SetFlyBehavior(std::move(flyBehavior));
     };
 
-    void SetFlyBehavior(std::unique_ptr<IFlyBehavior> &&flyBehavior) {
+    void SetFlyBehavior(std::unique_ptr<IFlyBehavior>&& flyBehavior)
+    {
         assert(flyBehavior);
         m_flyBehavior = std::move(flyBehavior);
     }
 
-    void Fly() {
+    void Fly()
+    {
         m_flyBehavior->Fly();
     }
 
-    void Quack() {
+    void Quack()
+    {
         m_quackBehavior->Quack();
     }
 
-    void Dance() {
+    void Dance()
+    {
         m_danceBehavior->Dance();
     }
 
-    void Swim() {
+    void Swim()
+    {
         std::cout << "I'm swimming!" << std::endl;
     }
 

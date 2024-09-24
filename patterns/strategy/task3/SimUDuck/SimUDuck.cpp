@@ -2,7 +2,8 @@
 #include "lib/Duck/MallardDuck.h"
 #include "lib/Duck/ModelDuck.h"
 
-int main() {
+int main()
+{
     MallardDuck mallardDuck;
     PlayWithDuck(mallardDuck);
     PlayWithDuck(mallardDuck);

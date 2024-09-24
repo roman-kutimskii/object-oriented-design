@@ -1,7 +1,8 @@
 #ifndef IFLYBEHAVIOR_H
 #define IFLYBEHAVIOR_H
 
-struct IFlyBehavior {
+struct IFlyBehavior
+{
     virtual ~IFlyBehavior() = default;
 
     virtual void Fly() = 0;

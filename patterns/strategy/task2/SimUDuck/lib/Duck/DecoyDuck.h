@@ -6,16 +6,19 @@
 #include "Fly/FlyNoWay.h"
 #include "Quack/MuteQuackBehavior.h"
 
-class DecoyDuck final : public Duck {
+class DecoyDuck final : public Duck
+{
 public:
     DecoyDuck() : Duck(
         std::make_unique<FlyNoWay>(),
         std::make_unique<MuteQuackBehavior>(),
         std::make_unique<DanceNoWay>()
-    ) {
+    )
+    {
     };
 
-    void Display() const override {
+    void Display() const override
+    {
         std::cout << "I'm a decoy duck!" << std::endl;
     };
 };

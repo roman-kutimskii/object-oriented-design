@@ -3,9 +3,11 @@
 
 #include "IFlyBehavior.h"
 
-class FlyNoWay final : public IFlyBehavior {
+class FlyNoWay final : public IFlyBehavior
+{
 public:
-    void Fly() override {
+    void Fly() override
+    {
     };
 };
 
