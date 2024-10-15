@@ -9,8 +9,6 @@
 #include "Fly/IFlyBehavior.h"
 #include "Quack/IQuackBehavior.h"
 
-// TODO: Показать на диаграмме, кто использует классы конкретных стратегий
-
 class Duck
 {
 public:

@@ -3,7 +3,7 @@
 
 #include "../Duck.h"
 
-inline Behavior CreateFlyWithWings()
+inline FlyBehavior CreateFlyWithWings()
 {
 	int flyCount = 0;
 	return [flyCount]() mutable {

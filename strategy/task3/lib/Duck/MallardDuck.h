@@ -9,10 +9,8 @@
 class MallardDuck final : public Duck
 {
 public:
-	// TODO: Придумать, чтобы ошибка не оставалась незамеченной.
-
 	MallardDuck()
-		: Duck(CreateFlyWithWings, QuackQuack, DanceWaltz){};
+		: Duck(CreateFlyWithWings(), CreateQuackQuack(), CreateDanceWaltz()){};
 
 	void Display() const override
 	{

@@ -1,8 +1,6 @@
 #ifndef IDANCEBEHAVIOR_H
 #define IDANCEBEHAVIOR_H
 
-// TODO: Придумать константный метод, который можно здесь использовать
-
 struct IDanceBehavior
 {
 	virtual ~IDanceBehavior() = default;

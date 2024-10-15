@@ -3,14 +3,18 @@
 
 #include <iostream>
 
-inline void QuackQuack()
+inline QuackBehavior CreateQuackQuack()
 {
-	std::cout << "Quack-quack!" << std::endl;
+	return [] {
+		std::cout << "Quack-quack!" << std::endl;
+	};
 }
 
-inline void QuackSqueak()
+inline QuackBehavior CreateQuackSqueak()
 {
-	std::cout << "Squeak!" << std::endl;
+	return [] {
+		std::cout << "Squeak!" << std::endl;
+	};
 }
 
 #endif // QUACKFUNCTIONS_H

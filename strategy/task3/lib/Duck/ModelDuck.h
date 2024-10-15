@@ -8,7 +8,7 @@ class ModelDuck final : public Duck
 {
 public:
 	ModelDuck()
-		: Duck(nullptr, QuackQuack, nullptr){};
+		: Duck(nullptr, CreateQuackQuack(), nullptr){};
 
 	void Display() const override
 	{

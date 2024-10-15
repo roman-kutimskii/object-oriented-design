@@ -8,7 +8,7 @@ class RubberDuck final : public Duck
 {
 public:
 	RubberDuck()
-		: Duck(nullptr, QuackSqueak, nullptr){};
+		: Duck(nullptr, CreateQuackSqueak(), nullptr){};
 
 	void Display() const override
 	{

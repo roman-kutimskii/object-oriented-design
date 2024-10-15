@@ -10,7 +10,7 @@ class RedheadDuck final : public Duck
 {
 public:
 	RedheadDuck()
-		: Duck(CreateFlyWithWings, QuackQuack, DanceMinuet){};
+		: Duck(CreateFlyWithWings(), CreateQuackQuack(), CreateDanceMinuet()){};
 
 	void Display() const override
 	{

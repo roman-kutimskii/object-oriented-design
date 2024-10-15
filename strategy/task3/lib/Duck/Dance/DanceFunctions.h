@@ -3,14 +3,18 @@
 
 #include "../Duck.h"
 
-inline void DanceMinuet()
+inline DanceBehavior CreateDanceMinuet()
 {
-	std::cout << "I'm dancing a minuet!" << std::endl;
+	return [] {
+		std::cout << "I'm dancing a minuet!" << std::endl;
+	};
 }
 
-inline void DanceWaltz()
+inline DanceBehavior CreateDanceWaltz()
 {
-	std::cout << "I'm dancing a waltz!" << std::endl;
+	return [] {
+		std::cout << "I'm dancing a waltz!" << std::endl;
+	};
 }
 
 #endif // DANCEFUNCTIONS_H

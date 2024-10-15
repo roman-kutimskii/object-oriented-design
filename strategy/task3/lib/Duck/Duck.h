@@ -4,14 +4,14 @@
 #include <functional>
 #include <iostream>
 
-// TODO: Объявить разные using
-
-using Behavior = std::function<void()>;
+using DanceBehavior = std::function<void()>;
+using FlyBehavior = std::function<void()>;
+using QuackBehavior = std::function<void()>;
 
 class Duck
 {
 public:
-	Duck(const Behavior& flyBehavior, const Behavior& quackBehavior, const Behavior& danceBehavior)
+	Duck(const FlyBehavior& flyBehavior, const QuackBehavior& quackBehavior, const DanceBehavior& danceBehavior)
 	{
 		m_quackBehavior = quackBehavior;
 		m_danceBehavior = danceBehavior;
@@ -47,7 +47,7 @@ public:
 		std::cout << "I'm swimming!" << std::endl;
 	}
 
-	void SetFlyBehavior(const Behavior& flyBehavior)
+	void SetFlyBehavior(const FlyBehavior& flyBehavior)
 	{
 		m_flyBehavior = flyBehavior;
 	};
@@ -57,9 +57,9 @@ public:
 	virtual ~Duck() = default;
 
 private:
-	Behavior m_flyBehavior;
-	Behavior m_quackBehavior;
-	Behavior m_danceBehavior;
+	FlyBehavior m_flyBehavior;
+	QuackBehavior m_quackBehavior;
+	DanceBehavior m_danceBehavior;
 };
 
 #endif // DUCK_H

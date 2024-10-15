@@ -1,5 +1,3 @@
-// ReSharper disable CppMemberFunctionMayBeConst
-// ReSharper disable CppMemberFunctionMayBeStatic
 #ifndef DUCK_H
 #define DUCK_H
 
