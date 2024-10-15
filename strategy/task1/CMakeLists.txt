@@ -1,0 +1,22 @@
+add_executable(
+        task1
+        SimUDuck.cpp
+        lib/Duck/DecoyDuck.h
+        lib/Duck/Dance/DanceMinuet.h
+        lib/Duck/Dance/DanceNoWay.h
+        lib/Duck/Dance/DanceWaltz.h
+        lib/Duck/Dance/IDanceBehavior.h
+        lib/Duck/Duck.h
+        lib/Duck/Fly/FlyNoWay.h
+        lib/Duck/Fly/FlyWithWings.h
+        lib/Duck/Fly/IFlyBehavior.h
+        lib/Duck/MallardDuck.h
+        lib/Duck/ModelDuck.h
+        lib/Duck/Quack/IQuackBehavior.h
+        lib/Duck/Quack/MuteQuackBehavior.h
+        lib/Duck/Quack/QuackBehavior.h
+        lib/Duck/Quack/SqueakBehavior.h
+        lib/Duck/RedheadDuck.h
+        lib/Duck/RubberDuck.h
+        lib/DuckFunctions.h
+)

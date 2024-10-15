@@ -3,4 +3,6 @@ project(strategy)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(strategy main.cpp)
+add_subdirectory(task1)
+add_subdirectory(task2)
+add_subdirectory(task3)
