@@ -1,0 +1,4 @@
+rectangle green 5 5 10 10
+triangle red 5 0 10 10 10 10
+ellipse blue 0 0 10 10
+regpol pink 0 0 10 10

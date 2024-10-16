@@ -1,0 +1,21 @@
+add_executable(
+        factory
+        main.cpp
+        Canvas/ICanvas.h
+        Shape/Shape.h
+        Shape/Color.h
+        Canvas/Point.h
+        Shape/Ellipse.h
+        Shape/Rectangle.h
+        Shape/RegularPolygon.h
+        Shape/PictureDraft.h
+        Painter/IPainter.h
+        Painter/Painter.h
+        Designer/IDesigner.h
+        Designer/Designer.h
+        ShapeFactory/IShapeFactory.h
+        ShapeFactory/ShapeFactory.h
+        Shape/Triangle.h
+        Client/Client.h
+        Canvas/ConsoleCanvas.h
+)
