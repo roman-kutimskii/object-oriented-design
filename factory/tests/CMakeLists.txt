@@ -17,6 +17,7 @@ add_executable(
         Shape/EllipseTest.cpp
         Shape/TriangleTest.cpp
         Shape/RectangleTest.cpp
+        Shape/RegularPolygonTest.cpp
 )
 target_link_libraries(factory_tests GTest::gtest_main GTest::gmock_main)
 

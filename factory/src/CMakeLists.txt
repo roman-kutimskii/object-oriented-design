@@ -8,4 +8,5 @@ add_executable(
         Shape/Ellipse.h
         Shape/Triangle.h
         Shape/Rectangle.h
+        Shape/RegularPolygon.h
 )
