@@ -11,9 +11,9 @@
 class ShapeFactory : public IShapeFactory
 {
 public:
-    std::shared_ptr<Shape> CreateShape(std::string &description) override
+    std::unique_ptr<Shape> CreateShape(const std::string &description) const override
     {
-        std::stringstream iss(description);
+        std::istringstream iss(description);
 
         std::string shapeType, colorString;
         iss >> shapeType >> colorString;
@@ -23,18 +23,20 @@ public:
         {
             return CreateTriangle(color, iss);
         }
-        else if (shapeType == Ellipse::GetType())
+        if (shapeType == Ellipse::GetType())
         {
             return CreateEllipse(color, iss);
         }
-        else if (shapeType == Rectangle::GetType())
+        if (shapeType == Rectangle::GetType())
         {
             return CreateRectangle(color, iss);
         }
-        else if (shapeType == RegularPolygon::GetType())
+        if (shapeType == RegularPolygon::GetType())
         {
             return CreateRegularPolygon(color, iss);
         }
+
+        throw std::invalid_argument("Invalid shape");
     };
 
 private:

@@ -8,7 +8,6 @@ add_executable(
         Shape/Ellipse.h
         Shape/Rectangle.h
         Shape/RegularPolygon.h
-        Canvas/ConsoleCanvas.cpp
         Shape/PictureDraft.h
         Painter/IPainter.h
         Painter/Painter.h
@@ -18,4 +17,5 @@ add_executable(
         ShapeFactory/ShapeFactory.h
         Shape/Triangle.h
         Client/Client.h
+        Canvas/ConsoleCanvas.h
 )

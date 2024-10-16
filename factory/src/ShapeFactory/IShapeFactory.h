@@ -8,7 +8,7 @@
 class IShapeFactory
 {
 public:
-    virtual std::unique_ptr<Shape> CreateShape(const std::string &description) = 0;
+    virtual std::unique_ptr<Shape> CreateShape(const std::string &description) const = 0;
 
     virtual ~IShapeFactory() = default;
 };
