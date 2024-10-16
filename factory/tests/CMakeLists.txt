@@ -18,6 +18,8 @@ add_executable(
         Shape/TriangleTest.cpp
         Shape/RectangleTest.cpp
         Shape/RegularPolygonTest.cpp
+        Shape/MockShape.h
+        Shape/PictureDraftTest.cpp
 )
 target_link_libraries(factory_tests GTest::gtest_main GTest::gmock_main)
 
