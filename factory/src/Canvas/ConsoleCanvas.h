@@ -1,3 +1,6 @@
+#ifndef CONSOLECANVAS_H
+#define CONSOLECANVAS_H
+
 #include <iostream>
 #include <string>
 #include "ICanvas.h"
@@ -20,3 +23,6 @@ public:
                   << horizontalRadius << " and vertical radius " << verticalRadius << std::endl;
     }
 };
+
+
+#endif // CONSOLECANVAS_H
