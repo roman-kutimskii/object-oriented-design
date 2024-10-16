@@ -10,8 +10,12 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-add_executable(factory_tests main.cpp)
-target_link_libraries(factory_tests GTest::gtest_main)
+add_executable(
+        factory_tests
+        main.cpp
+        Canvas/MockCanvas.h
+)
+target_link_libraries(factory_tests GTest::gtest_main GTest::gmock_main)
 
 include(GoogleTest)
 gtest_discover_tests(factory_tests)
