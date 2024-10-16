@@ -20,6 +20,7 @@ add_executable(
         Shape/RegularPolygonTest.cpp
         Shape/MockShape.h
         Shape/PictureDraftTest.cpp
+        Painter/Painter.cpp
 )
 target_link_libraries(factory_tests GTest::gtest_main GTest::gmock_main)
 
