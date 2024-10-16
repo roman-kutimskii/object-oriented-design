@@ -92,7 +92,7 @@ private:
         std::string point3X;
         std::string point3Y;
 
-        iss >> point1X >> point1Y >> point2X >> point2Y >> point3X;
+        iss >> point1X >> point1Y >> point2X >> point2Y >> point3X >> point3Y;
 
         return std::make_unique<Triangle>(
             color, Point(std::stoi(point1X), std::stoi(point1Y)), Point(std::stoi(point2X), std::stoi(point2Y)),
