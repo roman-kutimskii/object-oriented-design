@@ -1,8 +1,8 @@
 #include <gtest/gtest.h>
 
-#include "../src/Designer/Designer.h"
-#include "Shape/MockShape.h"
-#include "ShapeFactory/MockShapeFactory.h"
+#include "../../src/Designer/Designer.h"
+#include "../Shape/MockShape.h"
+#include "../ShapeFactory/MockShapeFactory.h"
 
 TEST(DesignerTest, CreateDraft)
 {

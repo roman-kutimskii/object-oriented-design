@@ -22,8 +22,11 @@ add_executable(
         Shape/PictureDraftTest.cpp
         Painter/Painter.cpp
         ShapeFactory/ShapeFactoryTest.cpp
-        DesignerTest.cpp
+        Designer/DesignerTest.cpp
         ShapeFactory/MockShapeFactory.h
+        Client/Client.cpp
+        Designer/MockDesigner.h
+        Painter/MockPainter.h
 )
 target_link_libraries(factory_tests GTest::gtest_main GTest::gmock_main)
 
