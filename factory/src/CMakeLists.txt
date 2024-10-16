@@ -10,4 +10,7 @@ add_executable(
         Shape/Rectangle.h
         Shape/RegularPolygon.h
         Canvas/ConsoleCanvas.cpp
+        Shape/PictureDraft.h
+        Painter/IPainter.h
+        Painter/Painter.h
 )
