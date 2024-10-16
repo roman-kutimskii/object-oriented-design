@@ -9,4 +9,5 @@ add_executable(
         Shape/Triangle.h
         Shape/Rectangle.h
         Shape/RegularPolygon.h
+        Canvas/ConsoleCanvas.cpp
 )
