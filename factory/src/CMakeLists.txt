@@ -13,4 +13,7 @@ add_executable(
         Shape/PictureDraft.h
         Painter/IPainter.h
         Painter/Painter.h
+        Designer/IDesigner.h
+        Designer/Designer.h
+        ShapeFactory/IShapeFactory.h
 )

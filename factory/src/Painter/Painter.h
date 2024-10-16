@@ -1,5 +1,6 @@
 #ifndef PAINTER_H
 #define PAINTER_H
+
 #include "IPainter.h"
 
 class Painter : public IPainter
