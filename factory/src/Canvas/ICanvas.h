@@ -11,7 +11,7 @@ public:
 
     virtual void DrawLine(Point from, Point to) = 0;
 
-    virtual void DrawEllipse(Point leftTop, int width, int height);
+    virtual void DrawEllipse(Point center, int horizontalRadius, int verticalRadius) = 0;
 
     virtual ~ICanvas() = default;
 };

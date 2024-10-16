@@ -14,6 +14,7 @@ add_executable(
         factory_tests
         main.cpp
         Canvas/MockCanvas.h
+        Shape/EllipseTest.cpp
 )
 target_link_libraries(factory_tests GTest::gtest_main GTest::gmock_main)
 

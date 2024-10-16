@@ -1,6 +1,9 @@
-add_executable(factory main.cpp)add_executable(
+add_executable(
         factory
         main.cpp
         Canvas/ICanvas.h
+        Shape/Shape.h
+        Shape/Color.h
         Canvas/Point.h
+        Shape/Ellipse.h
 )

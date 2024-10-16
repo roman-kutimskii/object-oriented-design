@@ -5,7 +5,7 @@
 
 #include "../../src/Canvas/ICanvas.h"
 
-class MockCanvas : ICanvas
+class MockCanvas : public ICanvas
 {
 public:
     MOCK_METHOD(void, SetColor, (std::string color), (override));
