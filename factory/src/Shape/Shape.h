@@ -13,6 +13,7 @@ public:
 
     Color GetColor() const { return m_color; }
 
+    // TODO: разобраться в виртуальном деструкторе
     virtual ~Shape() = default;
 private:
     Color m_color;
