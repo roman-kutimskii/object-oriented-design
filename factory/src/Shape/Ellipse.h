@@ -14,7 +14,7 @@ public:
 
     void Draw(ICanvas &canvas) const override
     {
-        canvas.SetColor(colorStringMap.at(this->GetColor()));
+        canvas.SetColor(colorStringMap.at(GetColor()));
         canvas.DrawEllipse(m_center, m_horizontalRadius, m_verticalRadius);
     };
 

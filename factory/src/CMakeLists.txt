@@ -6,4 +6,5 @@ add_executable(
         Shape/Color.h
         Canvas/Point.h
         Shape/Ellipse.h
+        Shape/Triangle.h
 )
