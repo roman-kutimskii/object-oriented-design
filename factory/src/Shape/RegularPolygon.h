@@ -50,6 +50,8 @@ public:
 
     int GetVertexCount() const { return m_vertexCount; }
 
+    static std::string GetType() { return "regpol"; };
+
 private:
     Point m_center;
     int m_radius;

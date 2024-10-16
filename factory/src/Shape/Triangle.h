@@ -1,5 +1,5 @@
-#ifndef ELLIPSE_H
-#define ELLIPSE_H
+#ifndef TRIANGLE_H
+#define TRIANGLE_H
 
 #include "Shape.h"
 
@@ -26,10 +26,12 @@ public:
 
     Point GetPoint3() const { return m_point3; }
 
+    static std::string GetType() { return "triangle"; };
+
 private:
     Point m_point1;
     Point m_point2;
     Point m_point3;
 };
 
-#endif // ELLIPSE_H
+#endif // TRIANGLE_H

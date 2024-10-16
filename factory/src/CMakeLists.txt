@@ -6,7 +6,6 @@ add_executable(
         Shape/Color.h
         Canvas/Point.h
         Shape/Ellipse.h
-        Shape/Triangle.h
         Shape/Rectangle.h
         Shape/RegularPolygon.h
         Canvas/ConsoleCanvas.cpp
@@ -16,4 +15,6 @@ add_executable(
         Designer/IDesigner.h
         Designer/Designer.h
         ShapeFactory/IShapeFactory.h
+        ShapeFactory/ShapeFactory.h
+        Shape/Triangle.h
 )

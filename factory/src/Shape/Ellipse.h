@@ -12,6 +12,7 @@ public:
         m_horizontalRadius(horizontalRadius),
         m_verticalRadius(verticalRadius){};
 
+
     void Draw(ICanvas &canvas) const override
     {
         canvas.SetColor(colorStringMap.at(GetColor()));
@@ -23,6 +24,8 @@ public:
     int GetHorizontalRadius() const { return m_horizontalRadius; };
 
     int GetVerticalRadius() const { return m_verticalRadius; };
+
+    static std::string GetType() { return "ellipse"; };
 
 private:
     Point m_center;

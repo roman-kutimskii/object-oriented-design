@@ -24,6 +24,8 @@ public:
 
     Point GetRightBottom() const { return m_rightBottom; }
 
+    static std::string GetType() { return "rectangle"; };
+
 private:
     Point m_leftTop;
     Point m_rightBottom;
