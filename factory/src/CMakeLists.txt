@@ -17,4 +17,5 @@ add_executable(
         ShapeFactory/IShapeFactory.h
         ShapeFactory/ShapeFactory.h
         Shape/Triangle.h
+        Client/Client.h
 )
