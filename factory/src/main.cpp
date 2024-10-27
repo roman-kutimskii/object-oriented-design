@@ -6,8 +6,6 @@
 #include "Painter/Painter.h"
 #include "ShapeFactory/ShapeFactory.h"
 
-// TODO: Сделать диаграмму классов
-
 int main()
 {
     Painter painter;
