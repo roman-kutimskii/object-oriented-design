@@ -76,4 +76,5 @@ SpacesInCStyleCastParentheses: false
 SpacesInParentheses: false
 TabWidth: 4
 Standard: c++20
+SeparateDefinitionBlocks: Always
 ...
