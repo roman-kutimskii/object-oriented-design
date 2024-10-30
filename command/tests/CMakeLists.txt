@@ -16,9 +16,11 @@ add_executable(
         ConstDocumentItem.cpp
         DocumentItem.cpp
         History.cpp
+        MockDocument.h
         MockImage.h
         MockParagraph.h
-        MockCommand.h
+        command/DocumentCommand.cpp
+        command/MockCommand.h
 )
 target_link_libraries(command_tests GTest::gtest_main GTest::gmock_main)
 

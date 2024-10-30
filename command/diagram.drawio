@@ -24,7 +24,7 @@
         <mxCell id="K-S2yRKQXOXhtc6X__pn-280" value="&lt;i&gt;&lt;b&gt;Document&lt;/b&gt;&lt;/i&gt;&lt;i style=&quot;font-weight: bold;&quot;&gt;Command&lt;/i&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1675" y="-270" width="295" height="138" as="geometry" />
         </mxCell>
-        <mxCell id="K-S2yRKQXOXhtc6X__pn-281" value="- m_document: shared_ptr&amp;lt;IDocument&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="K-S2yRKQXOXhtc6X__pn-280" vertex="1">
+        <mxCell id="K-S2yRKQXOXhtc6X__pn-281" value="# m_document: shared_ptr&amp;lt;IDocument&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="K-S2yRKQXOXhtc6X__pn-280" vertex="1">
           <mxGeometry y="26" width="295" height="26" as="geometry" />
         </mxCell>
         <mxCell id="K-S2yRKQXOXhtc6X__pn-291" value="- m_prev: shared_ptr&amp;lt;ICommand&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="K-S2yRKQXOXhtc6X__pn-280" vertex="1">

@@ -17,6 +17,7 @@ public:
 
 private:
     std::shared_ptr<ICommand> m_prev;
+protected:
     std::shared_ptr<IDocument> m_document;
 };
 

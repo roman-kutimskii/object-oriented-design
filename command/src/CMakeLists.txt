@@ -7,6 +7,6 @@ add_executable(
         IDocument.h
         IImage.h
         IParagraph.h
-        command/ICommand.h
         command/DocumentCommand.h
+        command/ICommand.h
 )
