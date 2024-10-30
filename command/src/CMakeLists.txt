@@ -4,6 +4,7 @@ add_executable(
         ConstDocumentItem.h
         DocumentCommand.h
         DocumentItem.h
+        History.h
         ICommand.h
         IDocument.h
         IImage.h

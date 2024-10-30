@@ -1,7 +1,7 @@
 #ifndef MOCKPARAGRAPH_H
 #define MOCKPARAGRAPH_H
-#include <gmock/gmock.h>
 
+#include <gmock/gmock.h>
 
 #include "../src/IParagraph.h"
 
