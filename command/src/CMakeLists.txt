@@ -10,4 +10,5 @@ add_executable(
         command/DocumentCommand.h
         command/ICommand.h
         command/InsertParagraph.h
+        command/InsertImage.h
 )

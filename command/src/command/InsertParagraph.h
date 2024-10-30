@@ -6,8 +6,9 @@
 class InsertParagraph final : public DocumentCommand
 {
 public:
-    explicit InsertParagraph(
-        std::shared_ptr<IDocument> document, const std::string &text, std::optional<size_t> position = std::nullopt
+    InsertParagraph(
+        std::shared_ptr<IDocument> document, const std::string &text,
+        const std::optional<size_t> position = std::nullopt
     ) :
         DocumentCommand(std::move(document)),
         m_text(text),
@@ -27,7 +28,7 @@ public:
         {
             m_document->DeleteItem(m_document->GetItemsCount() - 1);
         }
-    };
+    }
 
 private:
     const std::string &m_text;
