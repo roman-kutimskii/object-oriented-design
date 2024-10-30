@@ -19,10 +19,6 @@ public:
     virtual void DeleteItem(size_t index) = 0;
     [[nodiscard]] virtual std::string GetTitle() const = 0;
     virtual void SetTitle(const std::string &title) = 0;
-    [[nodiscard]] virtual bool CanUndo() const = 0;
-    virtual void Undo() = 0;
-    [[nodiscard]] virtual bool CanRedo() const = 0;
-    virtual void Redo() = 0;
     virtual void Save(const std::string &path) const = 0;
 };
 
