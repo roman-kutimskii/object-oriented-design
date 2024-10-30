@@ -16,6 +16,20 @@ public:
 
     [[nodiscard]] std::shared_ptr<const IParagraph> GetParagraph() const { return m_paragraph; }
 
+    [[nodiscard]] std::string ToString() const
+    {
+        std::stringstream ss;
+        if (m_image)
+        {
+            ss << "Image: " << m_image->GetWidth() << " " << m_image->GetHeight() << " " << m_image->GetPath();
+        }
+        else if (m_paragraph)
+        {
+            ss << "Paragraph: " << m_paragraph->GetText();
+        }
+        return ss.str();
+    }
+
 private:
     std::shared_ptr<const IImage> m_image;
     std::shared_ptr<const IParagraph> m_paragraph;
