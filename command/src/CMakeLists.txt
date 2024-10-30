@@ -9,4 +9,5 @@ add_executable(
         IParagraph.h
         command/DocumentCommand.h
         command/ICommand.h
+        command/InsertParagraph.h
 )
