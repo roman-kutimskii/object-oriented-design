@@ -2,11 +2,11 @@ add_executable(
         command
         main.cpp
         ConstDocumentItem.h
-        DocumentCommand.h
         DocumentItem.h
         History.h
-        ICommand.h
         IDocument.h
         IImage.h
         IParagraph.h
+        command/ICommand.h
+        command/DocumentCommand.h
 )

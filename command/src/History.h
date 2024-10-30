@@ -4,7 +4,7 @@
 #include <memory>
 #include <vector>
 
-#include "ICommand.h"
+#include "command/ICommand.h"
 
 class History
 {

@@ -4,7 +4,7 @@
 #include <memory>
 
 #include "ICommand.h"
-#include "IDocument.h"
+#include "../IDocument.h"
 
 class DocumentCommand : public ICommand
 {

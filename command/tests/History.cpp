@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
 #include "../src/History.h"
-#include "MockCommand.h"
+#include "command/MockCommand.h"
 
 TEST(History, AddAndExecuteCommandExecutesCommand)
 {

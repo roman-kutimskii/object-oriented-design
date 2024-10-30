@@ -3,7 +3,7 @@
 
 #include <gmock/gmock.h>
 
-#include "../src/ICommand.h"
+#include "../../src/command/ICommand.h"
 
 class MockCommand final : public ICommand
 {
