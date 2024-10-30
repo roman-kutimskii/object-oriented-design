@@ -11,4 +11,5 @@ add_executable(
         command/ICommand.h
         command/InsertParagraph.h
         command/InsertImage.h
+        command/SetTitle.h
 )

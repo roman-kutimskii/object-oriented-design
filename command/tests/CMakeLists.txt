@@ -23,6 +23,7 @@ add_executable(
         command/MockCommand.h
         command/InsertParagraph.cpp
         command/InsertImage.cpp
+        command/SetTitle.cpp
 )
 target_link_libraries(command_tests GTest::gtest_main GTest::gmock_main)
 
