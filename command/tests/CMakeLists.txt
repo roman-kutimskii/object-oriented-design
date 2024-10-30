@@ -10,7 +10,14 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-add_executable(command_tests main.cpp)
+add_executable(
+        command_tests
+        main.cpp
+        MockImage.h
+        MockParagraph.h
+        ConstDocumentItem.cpp
+        DocumentItem.cpp
+)
 target_link_libraries(command_tests GTest::gtest_main GTest::gmock_main)
 
 include(GoogleTest)
