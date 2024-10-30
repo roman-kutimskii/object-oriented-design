@@ -3,4 +3,5 @@ project(command)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(command main.cpp)
+add_subdirectory(src)
+add_subdirectory(tests)
