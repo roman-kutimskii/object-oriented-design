@@ -24,6 +24,7 @@ add_executable(
         command/InsertParagraph.cpp
         command/InsertImage.cpp
         command/SetTitle.cpp
+        command/ResizeImage.cpp
 )
 target_link_libraries(command_tests GTest::gtest_main GTest::gmock_main)
 

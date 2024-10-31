@@ -13,4 +13,5 @@ add_executable(
         command/InsertImage.h
         command/SetTitle.h
         command/List.h
+        command/ResizeImage.h
 )

@@ -7,6 +7,7 @@
 
 class MockImage final : public IImage
 {
+public:
     MOCK_METHOD(std::string, GetPath, (), (const, override));
     MOCK_METHOD(int, GetWidth, (), (const, override));
     MOCK_METHOD(int, GetHeight, (), (const, override));
