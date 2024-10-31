@@ -12,6 +12,7 @@ public:
     MOCK_METHOD(int, GetWidth, (), (const, override));
     MOCK_METHOD(int, GetHeight, (), (const, override));
     MOCK_METHOD(void, Resize, (int width, int height), (override));
+    MOCK_METHOD(bool, GetDeleted, (), (const, override));
 };
 
 #endif // MOCKIMAGE_H

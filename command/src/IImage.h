@@ -10,6 +10,7 @@ public:
     [[nodiscard]] virtual std::string GetPath() const = 0;
     [[nodiscard]] virtual int GetWidth() const = 0;
     [[nodiscard]] virtual int GetHeight() const = 0;
+    [[nodiscard]] virtual bool GetDeleted() const = 0;
     virtual void Resize(int width, int height) = 0;
 };
 
