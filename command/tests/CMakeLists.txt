@@ -26,6 +26,7 @@ add_executable(
         command/SetTitle.cpp
         command/ResizeImage.cpp
         command/MarkDeleted.cpp
+        command/DeleteItem.cpp
 )
 target_link_libraries(command_tests GTest::gtest_main GTest::gmock_main)
 

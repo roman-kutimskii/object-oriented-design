@@ -3,7 +3,7 @@
 
 #include "DocumentCommand.h"
 
-class MarkDeleted : public DocumentCommand
+class MarkDeleted final : public DocumentCommand
 {
 public:
     MarkDeleted(std::shared_ptr<IDocument> document, const size_t position) :

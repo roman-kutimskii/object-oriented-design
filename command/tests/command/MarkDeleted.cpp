@@ -40,7 +40,7 @@ TEST(MarkDeletedTest, UnexecuteRestoresImageFromDeleted)
     const auto mockImage = std::make_shared<MockImage>();
     constexpr size_t position = 0;
 
-    EXPECT_CALL(*mockDocument, GetItem(position)).WillOnce(testing::Return(DocumentItem(mockImage)));
+    EXPECT_CALL(*mockDocument, GetItem(position)).WillRepeatedly(testing::Return(DocumentItem(mockImage)));
 
     EXPECT_CALL(*mockImage, SetDeleted(true)).Times(1);
     EXPECT_CALL(*mockImage, SetDeleted(false)).Times(1);

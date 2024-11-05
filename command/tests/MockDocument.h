@@ -15,7 +15,7 @@ public:
     MOCK_METHOD(size_t, GetItemsCount, (), (const, override));
     MOCK_METHOD(ConstDocumentItem, GetItem, (size_t index), (const, override));
     MOCK_METHOD(DocumentItem, GetItem, (size_t index), (override));
-    MOCK_METHOD(void, DeleteItem, (size_t index), (override));
+    MOCK_METHOD(std::unique_ptr<ConstDocumentItem>, DeleteItem, (size_t index), (override));
     MOCK_METHOD(std::string, GetTitle, (), (const, override));
     MOCK_METHOD(void, SetTitle, (const std::string &title), (override));
     MOCK_METHOD(void, Save, (const std::string &path), (const, override));

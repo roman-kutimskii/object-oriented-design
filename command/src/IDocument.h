@@ -16,7 +16,7 @@ public:
     [[nodiscard]] virtual size_t GetItemsCount() const = 0;
     [[nodiscard]] virtual ConstDocumentItem GetItem(size_t index) const = 0;
     virtual DocumentItem GetItem(size_t index) = 0;
-    virtual void DeleteItem(size_t index) = 0;
+    virtual std::unique_ptr<ConstDocumentItem> DeleteItem(size_t index) = 0;
     [[nodiscard]] virtual std::string GetTitle() const = 0;
     virtual void SetTitle(const std::string &title) = 0;
     virtual void Save(const std::string &path) const = 0;
