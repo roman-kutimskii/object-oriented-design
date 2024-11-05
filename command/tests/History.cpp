@@ -3,14 +3,14 @@
 #include "../src/History.h"
 #include "command/MockCommand.h"
 
-TEST(History, AddAndExecuteCommandExecutesCommand)
+TEST(History, AddCommandNotExecutesCommand)
 {
     History history;
     auto command = std::make_unique<MockCommand>();
 
-    EXPECT_CALL(*command, Execute()).Times(1);
+    EXPECT_CALL(*command, Execute()).Times(0);
 
-    history.AddAndExecuteCommand(std::move(command));
+    history.AddCommand(std::move(command));
 }
 
 TEST(History, UndoExecutesUnexecuteOnLastCommand)
@@ -26,8 +26,8 @@ TEST(History, UndoExecutesUnexecuteOnLastCommand)
         EXPECT_CALL(*command2, Unexecute());
     }
 
-    history.AddAndExecuteCommand(std::move(command1));
-    history.AddAndExecuteCommand(std::move(command2));
+    history.AddCommand(std::move(command1));
+    history.AddCommand(std::move(command2));
     history.Undo();
 }
 
@@ -45,8 +45,8 @@ TEST(History, RedoExecutesExecuteOnNextCommand)
         EXPECT_CALL(*command2, Execute());
     }
 
-    history.AddAndExecuteCommand(std::move(command1));
-    history.AddAndExecuteCommand(std::move(command2));
+    history.AddCommand(std::move(command1));
+    history.AddCommand(std::move(command2));
     history.Undo();
     history.Redo();
 }
@@ -56,7 +56,7 @@ TEST(History, CanUndoReturnsTrueAfterCommandAdded)
     History history;
     auto command = std::make_unique<MockCommand>();
 
-    history.AddAndExecuteCommand(std::move(command));
+    history.AddCommand(std::move(command));
 
     EXPECT_TRUE(history.CanUndo());
 }
@@ -80,7 +80,7 @@ TEST(History, CanRedoReturnsFalseAfterCommandAdded)
     History history;
     auto command = std::make_unique<MockCommand>();
 
-    history.AddAndExecuteCommand(std::move(command));
+    history.AddCommand(std::move(command));
 
     EXPECT_FALSE(history.CanRedo());
 }
@@ -90,7 +90,7 @@ TEST(History, CanRedoReturnsTrueAfterUndo)
     History history;
     auto command = std::make_unique<MockCommand>();
 
-    history.AddAndExecuteCommand(std::move(command));
+    history.AddCommand(std::move(command));
     history.Undo();
 
     EXPECT_TRUE(history.CanRedo());
@@ -123,10 +123,10 @@ TEST(History, ExceedingMaxSizeRemovesOldestCommand)
 
     for (int i = 0; i < 10; ++i)
     {
-        history.AddAndExecuteCommand(std::move(commands[i]));
+        history.AddCommand(std::move(commands[i]));
     }
 
-    history.AddAndExecuteCommand(std::move(commands[10]));
+    history.AddCommand(std::move(commands[10]));
 
     for (int i = 0; i < 10; ++i)
     {

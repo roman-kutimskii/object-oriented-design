@@ -14,4 +14,5 @@ add_executable(
         command/SetTitle.h
         command/List.h
         command/ResizeImage.h
+        command/MarkDeleted.h
 )

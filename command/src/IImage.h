@@ -12,6 +12,7 @@ public:
     [[nodiscard]] virtual int GetHeight() const = 0;
     [[nodiscard]] virtual bool GetDeleted() const = 0;
     virtual void Resize(int width, int height) = 0;
+    virtual void SetDeleted(bool deleted) = 0;
 };
 
 #endif // IIMAGE_H

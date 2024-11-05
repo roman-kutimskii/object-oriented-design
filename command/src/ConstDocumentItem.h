@@ -2,6 +2,7 @@
 #define CONSTDOCUMENTITEM_H
 
 #include <memory>
+#include <sstream>
 
 #include "IImage.h"
 #include "IParagraph.h"

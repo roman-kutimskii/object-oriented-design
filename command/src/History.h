@@ -9,13 +9,8 @@
 class History
 {
 public:
-    void AddAndExecuteCommand(std::unique_ptr<ICommand> command)
+    void AddCommand(std::unique_ptr<ICommand> command)
     {
-        if (!command)
-        {
-            throw std::invalid_argument("Command cannot be null");
-        }
-        command->Execute();
         if (m_currentIndex < m_commands.size())
         {
             m_commands.erase(m_commands.begin() + m_currentIndex, m_commands.end());

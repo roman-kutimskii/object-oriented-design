@@ -20,6 +20,7 @@ public:
     [[nodiscard]] virtual std::string GetTitle() const = 0;
     virtual void SetTitle(const std::string &title) = 0;
     virtual void Save(const std::string &path) const = 0;
+    virtual void MarkDeleted(bool deleted) = 0;
 };
 
 #endif // IDOCUMENT_H
