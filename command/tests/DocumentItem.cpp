@@ -4,9 +4,9 @@
 #include "MockImage.h"
 #include "MockParagraph.h"
 
-using ::testing::NiceMock;
-using ::testing::Return;
-using ::testing::ReturnRef;
+using testing::NiceMock;
+using testing::Return;
+using testing::ReturnRef;
 
 TEST(DocumentItemTest, GetImageReturnsCorrectImage)
 {
@@ -49,8 +49,8 @@ TEST(DocumentItemTest, ToStringReturnsCorrectStringForImage)
     EXPECT_CALL(*mockImage, GetHeight()).WillOnce(Return(480));
     EXPECT_CALL(*mockImage, GetPath()).WillOnce(ReturnRef(imagePath));
 
-    DocumentItem item(std::move(mockImage));
-    std::string expected = "Image: 640 480 path/to/image.png";
+    const DocumentItem item(std::move(mockImage));
+    const std::string expected = "Image: 640 480 path/to/image.png";
     EXPECT_EQ(item.ToString(), expected);
 }
 
@@ -61,7 +61,7 @@ TEST(DocumentItemTest, ToStringReturnsCorrectStringForParagraph)
 
     EXPECT_CALL(*mockParagraph, GetText()).WillOnce(ReturnRef(paragraphText));
 
-    DocumentItem item(std::move(mockParagraph));
-    std::string expected = "Paragraph: Sample text";
+    const DocumentItem item(std::move(mockParagraph));
+    const std::string expected = "Paragraph: Sample text";
     EXPECT_EQ(item.ToString(), expected);
 }

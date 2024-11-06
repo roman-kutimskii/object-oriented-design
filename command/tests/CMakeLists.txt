@@ -12,8 +12,8 @@ enable_testing()
 
 add_executable(
         command_tests
-        main.cpp
         DocumentItem.cpp
+        Image.cpp
         MockDocument.h
         MockImage.h
         MockParagraph.h
