@@ -14,6 +14,7 @@ add_executable(
         command_tests
         main.cpp
         DocumentItem.cpp
+        MockDocument.h
         MockImage.h
         MockParagraph.h
 )
