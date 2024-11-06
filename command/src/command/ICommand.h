@@ -6,6 +6,8 @@ class ICommand
 public:
     virtual ~ICommand() = default;
     virtual void Execute() = 0;
+
+    [[nodiscard]] virtual bool CanUndo() const { return false; }
 };
 
 #endif // ICOMMAND_H

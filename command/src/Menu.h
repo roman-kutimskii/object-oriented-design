@@ -7,20 +7,30 @@
 #include <utility>
 #include <vector>
 
+#include "IHistory.h"
 #include "IMenu.h"
 #include "command/ICommand.h"
 
 class Menu final : public IMenu
 {
 public:
-    explicit Menu(std::istream &input = std::cin, std::ostream &output = std::cout) : m_input(input), m_output(output)
+    explicit Menu(
+        IHistory *history, std::istream &input = std::cin, std::ostream &output = std::cout,
+        std::ostream &errput = std::cerr
+    ) :
+        m_history(history),
+        m_input(input),
+        m_output(output),
+        m_errput(errput)
     {
     }
 
-    void
-    AddItem(const std::string &shortcut, const std::string &description, std::unique_ptr<ICommand> &&command) override
+    void AddItem(
+        const std::string &shortcut, const std::string &description,
+        std::function<std::unique_ptr<ICommand>()> commandConstructor
+    ) override
     {
-        m_items.emplace_back(std::make_unique<Item>(shortcut, description, std::move(command)));
+        m_items.emplace_back(std::make_unique<Item>(shortcut, description, std::move(commandConstructor)));
     }
 
     void Run() override
@@ -56,16 +66,18 @@ public:
 private:
     struct Item
     {
-        Item(std::string shortcut, std::string description, std::unique_ptr<ICommand> &&command) :
+        Item(
+            std::string shortcut, std::string description, std::function<std::unique_ptr<ICommand>()> commandConstructor
+        ) :
             shortcut(std::move(shortcut)),
             description(std::move(description)),
-            command(std::move(command))
+            commandConstructor(std::move(commandConstructor))
         {
         }
 
         std::string shortcut;
         std::string description;
-        std::unique_ptr<ICommand> command;
+        std::function<std::unique_ptr<ICommand>()> commandConstructor;
     };
 
     bool ExecuteCommand(const std::string &command)
@@ -74,19 +86,38 @@ private:
         const auto it = std::ranges::find_if(m_items, [&](auto &item) { return item->shortcut == command; });
         if (it != m_items.end())
         {
-            it->get()->command->Execute();
+            if (auto commandPtr = it->get()->commandConstructor())
+            {
+                commandPtr->Execute();
+                if (commandPtr->CanUndo())
+                {
+                    m_history->AddCommand(
+                        std::unique_ptr<IUndoableCommand>(dynamic_cast<IUndoableCommand *>(commandPtr.release()))
+                    );
+                }
+                else
+                {
+                    m_errput << "Command is not undoable" << std::endl;
+                }
+            }
+            else
+            {
+                m_errput << "Failed to create command" << std::endl;
+            }
         }
         else
         {
-            m_output << "Unknown command" << std::endl;
+            m_errput << "Unknown command" << std::endl;
         }
 
         return !m_exit;
     }
 
     bool m_exit = false;
+    IHistory *m_history;
     std::istream &m_input;
     std::ostream &m_output;
+    std::ostream &m_errput;
     std::vector<std::unique_ptr<Item>> m_items;
 };
 
