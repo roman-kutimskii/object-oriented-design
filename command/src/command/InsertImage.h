@@ -18,19 +18,45 @@ public:
     {
     }
 
-    void Execute() override { m_document->InsertImage(m_path, m_width, m_height, m_position); }
+    void Execute() override
+    {
+        if (m_inserted)
+        {
+            m_document->MarkDeleted(m_position.value());
+        }
+        else
+        {
+            m_document->InsertImage(m_path, m_width, m_height, m_position);
+            m_inserted = true;
+        }
+    }
 
     void Unexecute() override
     {
         if (m_position.has_value())
         {
-            m_document->DeleteItem(m_position.value());
+            m_document->MarkDeleted(m_position.value());
         }
         else
         {
-            m_document->DeleteItem(m_document->GetItemsCount() - 1);
+            m_document->MarkDeleted(m_document->GetItemsCount() - 1);
         }
     }
+
+    ~InsertImage() override
+    {
+        if (m_inserted)
+        {
+            if (m_position.has_value())
+            {
+                m_document->DeleteItem(m_position.value());
+            }
+            else
+            {
+                m_document->DeleteItem(m_document->GetItemsCount() - 1);
+            }
+        }
+    };
 
 private:
     std::optional<size_t> m_position;
@@ -38,6 +64,7 @@ private:
     int m_height;
     const std::string &m_path;
     std::string m_copyPath;
+    bool m_inserted = false;
 };
 
 #endif // INSERTIMAGE_H

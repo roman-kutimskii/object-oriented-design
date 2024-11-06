@@ -19,7 +19,7 @@ public:
     MOCK_METHOD(std::string, GetTitle, (), (const, override));
     MOCK_METHOD(void, SetTitle, (const std::string &title), (override));
     MOCK_METHOD(void, Save, (const std::string &path), (const, override));
-    MOCK_METHOD(void, MarkDeleted, (bool deleted), (override));
+    MOCK_METHOD(void, MarkDeleted, (size_t position), (override));
 };
 
 #endif // MOCKDOCUMENT_H

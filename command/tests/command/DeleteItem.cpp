@@ -6,11 +6,13 @@
 #include "../MockImage.h"
 #include "../MockParagraph.h"
 
-TEST(DeleteItemTest, ExecuteCallsDeleteItem)
+TEST(DeleteItemTest, ExecuteCallsDeleteItemIfParagraph)
 {
     const auto mockDocument = std::make_shared<MockDocument>();
+    const auto mockParagraph = new MockParagraph();
     constexpr size_t position = 0;
 
+    EXPECT_CALL(*mockDocument, GetItem(position)).WillOnce(::testing::Return(mockParagraph));
     EXPECT_CALL(*mockDocument, DeleteItem(position));
 
     DeleteItem command(mockDocument, position);

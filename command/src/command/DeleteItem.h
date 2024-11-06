@@ -12,14 +12,25 @@ public:
     {
     }
 
-    void Execute() override { m_deletedItem = m_document->DeleteItem(m_position); }
+    void Execute() override
+    {
+        if (m_document->GetItem(m_position).GetImage() != nullptr)
+        {
+            m_document->MarkDeleted(m_position);
+            m_deleted = true;
+        }
+        else if (m_document->GetItem(m_position).GetParagraph() != nullptr)
+        {
+            m_deletedItem = m_document->DeleteItem(m_position);
+        }
+    }
 
     void Unexecute() override
     {
         if (m_deletedItem->GetImage() != nullptr)
         {
             const auto image = m_deletedItem->GetImage();
-            m_document->InsertImage(image->GetPath(), image->GetWidth(), image->GetHeight(), m_position);
+            m_document->MarkDeleted(m_position);
         }
         else if (m_deletedItem->GetParagraph() != nullptr)
         {
@@ -28,9 +39,19 @@ public:
         }
     }
 
+    ~DeleteItem() override
+    {
+        if (m_deleted)
+        {
+            m_document->DeleteItem(m_position);
+        }
+    };
+
+
 private:
     std::unique_ptr<ConstDocumentItem> m_deletedItem;
     size_t m_position;
+    bool m_deleted = false;
 };
 
 #endif // DELETEITEM_H
