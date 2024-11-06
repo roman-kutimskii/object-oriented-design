@@ -13,20 +13,6 @@ enable_testing()
 add_executable(
         command_tests
         main.cpp
-        ConstDocumentItem.cpp
-        DocumentItem.cpp
-        History.cpp
-        MockDocument.h
-        MockImage.h
-        MockParagraph.h
-        command/DocumentCommand.cpp
-        command/MockCommand.h
-        command/InsertParagraph.cpp
-        command/InsertImage.cpp
-        command/SetTitle.cpp
-        command/ResizeImage.cpp
-        command/MarkDeleted.cpp
-        command/DeleteItem.cpp
 )
 target_link_libraries(command_tests GTest::gtest_main GTest::gmock_main)
 

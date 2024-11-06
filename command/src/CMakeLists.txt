@@ -1,19 +1,4 @@
 add_executable(
         command
         main.cpp
-        ConstDocumentItem.h
-        DocumentItem.h
-        History.h
-        IDocument.h
-        IImage.h
-        IParagraph.h
-        command/DocumentCommand.h
-        command/ICommand.h
-        command/InsertParagraph.h
-        command/InsertImage.h
-        command/SetTitle.h
-        command/List.h
-        command/ResizeImage.h
-        command/MarkDeleted.h
-        command/DeleteItem.h
 )
