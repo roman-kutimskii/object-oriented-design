@@ -5,6 +5,7 @@ add_executable(
         IExporter.h
         Menu.h
         command/DocumentCommand.h
+        command/HistoryCommand.h
         command/ICommand.h
         command/IUndoableCommand.h
         command/MenuCommand.h
