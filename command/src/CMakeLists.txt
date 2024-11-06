@@ -6,6 +6,7 @@ add_executable(
         command/DocumentCommand.h
         command/ICommand.h
         command/IUndoableCommand.h
+        command/MenuCommand.h
         document/Document.h
         document/DocumentItem.h
         document/IDocument.h
