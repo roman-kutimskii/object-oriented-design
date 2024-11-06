@@ -7,19 +7,23 @@
 #include <utility>
 #include <vector>
 
+#include "IMenu.h"
 #include "command/ICommand.h"
 
-class Menu
+class Menu : public IMenu
 {
 public:
-    explicit Menu(std::istream &input = std::cin, std::ostream &output = std::cout) : m_input(input), m_output(output) {}
+    explicit Menu(std::istream &input = std::cin, std::ostream &output = std::cout) : m_input(input), m_output(output)
+    {
+    }
 
-    void AddItem(const std::string &shortcut, const std::string &description, std::unique_ptr<ICommand> &&command)
+    void
+    AddItem(const std::string &shortcut, const std::string &description, std::unique_ptr<ICommand> &&command) override
     {
         m_items.emplace_back(std::make_unique<Item>(shortcut, description, std::move(command)));
     }
 
-    void Run()
+    void Run() override
     {
         std::string command;
         while (m_output << ">" && std::getline(m_input, command) && ExecuteCommand(command))
@@ -27,16 +31,16 @@ public:
         }
     }
 
-    void ShowInstructions() const
+    void ShowInstructions() const override
     {
-        m_output << "Commands list:" << std::endl;
-        for (const auto &item: m_items)
+        m_output << "Commands list" << std::endl;
+        for (int i = 0; i < m_items.size(); i++)
         {
-            m_output << " " << item->shortcut << ": " << item->description << std::endl;
+            m_output << i + 1 << ". " << m_items[i]->shortcut << ": " << m_items[i]->description << std::endl;
         }
     }
 
-    void Exit() { m_exit = true; }
+    void Exit() override { m_exit = true; }
 
 private:
     struct Item

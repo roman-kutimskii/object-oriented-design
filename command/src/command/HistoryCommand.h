@@ -8,7 +8,10 @@
 
 class HistoryCommand : public ICommand
 {
-private:
+public:
+    explicit HistoryCommand(std::shared_ptr<History> history) : m_history(std::move(history)) {}
+
+protected:
     std::shared_ptr<History> m_history;
 };
 

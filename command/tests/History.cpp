@@ -34,6 +34,7 @@ TEST(HistoryTest, RedoMovesCommandToUndoStack)
     MockUndoableCommand *commandPtr = command.get();
 
     EXPECT_CALL(*commandPtr, Execute()).Times(testing::Exactly(1));
+    EXPECT_CALL(*commandPtr, Unexecute()).Times(testing::Exactly(1));
 
     history.AddCommand(std::move(command));
     history.Undo();

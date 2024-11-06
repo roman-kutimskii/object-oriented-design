@@ -3,8 +3,10 @@ add_executable(
         main.cpp
         History.h
         IExporter.h
+        IMenu.h
         Menu.h
         command/DocumentCommand.h
+        command/Exit.h
         command/HistoryCommand.h
         command/ICommand.h
         command/IUndoableCommand.h

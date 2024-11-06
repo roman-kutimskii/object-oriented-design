@@ -8,7 +8,10 @@
 
 class DocumentCommand : public IUndoableCommand
 {
-private:
+public:
+    explicit DocumentCommand(std::shared_ptr<IDocument> document) : m_document(std::move(document)) {}
+
+protected:
     std::shared_ptr<IDocument> m_document;
 };
 
