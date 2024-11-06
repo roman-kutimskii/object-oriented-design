@@ -21,7 +21,7 @@ public:
         m_history(history),
         m_input(input),
         m_output(output),
-        m_errput(errput)
+        m_errors(errput)
     {
     }
 
@@ -92,22 +92,22 @@ private:
                 if (commandPtr->CanUndo())
                 {
                     m_history->AddCommand(
-                        std::unique_ptr<IUndoableCommand>(dynamic_cast<IUndoableCommand *>(commandPtr.release()))
+                        std::unique_ptr<IUndoableCommand>(static_cast<IUndoableCommand *>(commandPtr.release()))
                     );
                 }
                 else
                 {
-                    m_errput << "Command is not undoable" << std::endl;
+                    m_errors << "Command is not undoable" << std::endl;
                 }
             }
             else
             {
-                m_errput << "Failed to create command" << std::endl;
+                m_errors << "Failed to create command" << std::endl;
             }
         }
         else
         {
-            m_errput << "Unknown command" << std::endl;
+            m_errors << "Unknown command" << std::endl;
         }
 
         return !m_exit;
@@ -117,7 +117,7 @@ private:
     IHistory *m_history;
     std::istream &m_input;
     std::ostream &m_output;
-    std::ostream &m_errput;
+    std::ostream &m_errors;
     std::vector<std::unique_ptr<Item>> m_items;
 };
 

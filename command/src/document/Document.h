@@ -29,7 +29,7 @@ public:
         }
     }
 
-    void InsertImage(const std::string &path, int width, int height, const std::optional<size_t> position) override
+    void InsertImage(const std::string &path, const int width, const int height, const std::optional<size_t> position) override
     {
         auto image = std::make_unique<Image>(path, width, height);
         auto item = std::make_unique<DocumentItem>(std::move(image));
@@ -81,7 +81,7 @@ public:
         m_items.erase(m_items.begin() + static_cast<int>(position));
     }
 
-    void Save(const std::string &path, const IExporter &exporter) const override { exporter.Export(path, m_items); }
+    void Save(const std::string &path, const IExporter *exporter) const override { exporter->Export(path, m_items); }
 
     void SetDeleted(const size_t position, const bool value) override
     {

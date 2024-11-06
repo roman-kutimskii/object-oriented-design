@@ -4,8 +4,8 @@
 #include <optional>
 #include <string>
 
-#include "DocumentItem.h"
 #include "../IExporter.h"
+#include "DocumentItem.h"
 
 class IDocument
 {
@@ -19,7 +19,7 @@ public:
     virtual void DeleteItem(size_t position) = 0;
     [[nodiscard]] virtual const std::string &GetTitle() const = 0;
     virtual void SetTitle(const std::string &title) = 0;
-    virtual void Save(const std::string &path, const IExporter &exporter) const = 0;
+    virtual void Save(const std::string &path, const IExporter *exporter) const = 0;
     virtual void SetDeleted(size_t position, bool value) = 0;
 };
 

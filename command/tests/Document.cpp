@@ -136,10 +136,10 @@ TEST_F(DocumentTest, SetDeletedWorksForImage)
 TEST_F(DocumentTest, SaveCallsExporterWithCorrectParameters)
 {
     const std::string path = "output.doc";
-    const testing::NiceMock<MockExporter> exporter;
+    const auto exporter = std::make_unique<testing::NiceMock<MockExporter>>();
     doc.InsertParagraph("Test paragraph", std::nullopt);
 
-    EXPECT_CALL(exporter, Export(path, testing::_)).Times(1);
+    EXPECT_CALL(*exporter, Export(path, testing::_)).Times(1);
 
-    doc.Save(path, exporter);
+    doc.Save(path, exporter.get());
 }
