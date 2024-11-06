@@ -5,7 +5,7 @@
 
 #include "../src/IParagraph.h"
 
-class MockParagraph final : public IParagraph
+class MockParagraph : public IParagraph
 {
 public:
     MOCK_METHOD(const std::string &, GetText, (), (const, override));

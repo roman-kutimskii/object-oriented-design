@@ -5,7 +5,7 @@
 
 #include "../src/IImage.h"
 
-class MockImage final : public IImage
+class MockImage : public IImage
 {
 public:
     MOCK_METHOD(const std::string &, GetPath, (), (const, override));
