@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "../src/Document.h"
+#include "../src/document/Document.h"
 #include "MockExporter.h"
 
 class DocumentTest : public testing::Test

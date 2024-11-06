@@ -3,7 +3,7 @@
 
 #include <gmock/gmock.h>
 
-#include "../src/IImage.h"
+#include "../src/document/IImage.h"
 
 class MockImage : public IImage
 {

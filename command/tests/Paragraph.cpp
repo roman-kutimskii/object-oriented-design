@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "../src/Paragraph.h"
+#include "../src/document/Paragraph.h"
 
 TEST(ParagraphTest, ConstructorAndGetText)
 {

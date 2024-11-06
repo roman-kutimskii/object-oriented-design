@@ -3,7 +3,7 @@
 
 #include <gmock/gmock.h>
 
-#include "../src/IDocument.h"
+#include "../src/document/IDocument.h"
 
 class MockDocument : public IDocument
 {

@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "../src/DocumentItem.h"
+#include "../src/document/DocumentItem.h"
 #include "MockImage.h"
 #include "MockParagraph.h"
 

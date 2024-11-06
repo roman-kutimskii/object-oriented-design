@@ -5,7 +5,7 @@
 #include <string>
 
 #include "DocumentItem.h"
-#include "IExporter.h"
+#include "../IExporter.h"
 
 class IDocument
 {

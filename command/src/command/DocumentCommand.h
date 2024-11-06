@@ -3,7 +3,7 @@
 
 #include <memory>
 
-#include "IDocument.h"
+#include "../document/IDocument.h"
 #include "IUndoableCommand.h"
 
 class DocumentCommand : public IUndoableCommand

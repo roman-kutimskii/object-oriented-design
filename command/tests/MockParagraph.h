@@ -3,7 +3,7 @@
 
 #include <gmock/gmock.h>
 
-#include "../src/IParagraph.h"
+#include "../src/document/IParagraph.h"
 
 class MockParagraph : public IParagraph
 {
