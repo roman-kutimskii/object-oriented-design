@@ -42,7 +42,16 @@ public:
 
     void Exit() override { m_exit = true; }
 
-    void Write(const std::string &text) const override { m_output << text << std::endl; }
+    void Write(const std::string &text) const override { m_output << text; }
+
+    [[nodiscard]] std::string ReadArguments() const override
+    {
+        std::string result;
+        m_output << "Enter arguments:" << std::endl;
+        m_output << "~";
+        std::getline(m_input, result);
+        return result;
+    }
 
 private:
     struct Item

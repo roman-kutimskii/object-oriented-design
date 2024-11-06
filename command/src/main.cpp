@@ -2,6 +2,7 @@
 #include "Menu.h"
 #include "command/Exit.h"
 #include "command/Help.h"
+#include "command/InsertParagraph.h"
 #include "command/List.h"
 #include "command/Redo.h"
 #include "command/Undo.h"
@@ -18,6 +19,10 @@ int main()
     menu->AddItem("undo", "Undo last command", std::make_unique<Command::Undo>(history.get()));
     menu->AddItem("redo", "Redo last command", std::make_unique<Command::Redo>(history.get()));
     menu->AddItem("list", "List all items", std::make_unique<Command::List>(menu.get(), document.get()));
+    menu->AddItem(
+        "insert_paragraph", "Insert paragraph. Arguments: <position>|end <text>",
+        std::make_unique<Command::InsertParagraph>(document.get(), menu.get())
+    );
 
     menu->ShowInstructions();
     menu->Run();

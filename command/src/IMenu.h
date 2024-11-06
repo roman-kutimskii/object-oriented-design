@@ -17,6 +17,7 @@ public:
     virtual void ShowInstructions() const = 0;
     virtual void Exit() = 0;
     virtual void Write(const std::string &text) const = 0;
+    [[nodiscard]] virtual std::string ReadArguments() const = 0;
 };
 
 #endif // IMENU_H

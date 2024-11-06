@@ -23,4 +23,5 @@ add_executable(
         document/Paragraph.h
         command/Redo.h
         command/List.h
+        command/InsertParagraph.h
 )

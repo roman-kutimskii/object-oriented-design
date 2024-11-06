@@ -16,6 +16,7 @@ public:
     MOCK_METHOD(void, ShowInstructions, (), (const, override));
     MOCK_METHOD(void, Exit, (), (override));
     MOCK_METHOD(void, Write, (const std::string &), (const, override));
+    MOCK_METHOD(std::string, ReadArguments, (), (const, override));
 };
 
 #endif // MOCKMENU_H
