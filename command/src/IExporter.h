@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-#include "./document/DocumentItem.h"
+#include "document/DocumentItem.h"
 
 class IExporter
 {

@@ -2,6 +2,7 @@ add_executable(
         command
         main.cpp
         IExporter.h
+        Menu.h
         command/DocumentCommand.h
         command/ICommand.h
         command/IUndoableCommand.h

@@ -15,11 +15,14 @@ add_executable(
         Document.cpp
         DocumentItem.cpp
         Image.cpp
+        Menu.cpp
         MockDocument.h
         MockExporter.h
         MockImage.h
         MockParagraph.h
         Paragraph.cpp
+        MockCommand.h
+        MockUndoableCommand.h
 )
 target_link_libraries(command_tests GTest::gtest_main GTest::gmock_main)
 
