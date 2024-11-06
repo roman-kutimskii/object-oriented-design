@@ -7,6 +7,7 @@ add_executable(
         Menu.h
         command/DocumentCommand.h
         command/Exit.h
+        command/Help.h
         command/HistoryCommand.h
         command/ICommand.h
         command/IUndoableCommand.h

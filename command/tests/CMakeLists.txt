@@ -26,6 +26,7 @@ add_executable(
         MockUndoableCommand.h
         Paragraph.cpp
         command/Exit.cpp
+        command/Help.cpp
 )
 target_link_libraries(command_tests GTest::gtest_main GTest::gmock_main)
 
