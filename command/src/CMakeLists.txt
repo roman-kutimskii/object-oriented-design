@@ -21,4 +21,5 @@ add_executable(
         document/IParagraph.h
         document/Image.h
         document/Paragraph.h
+        command/Redo.h
 )

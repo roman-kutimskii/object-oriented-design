@@ -29,6 +29,7 @@ add_executable(
         command/Exit.cpp
         command/Help.cpp
         command/Undo.cpp
+        command/Redo.cpp
 )
 target_link_libraries(command_tests GTest::gtest_main GTest::gmock_main)
 
