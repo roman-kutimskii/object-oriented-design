@@ -1,15 +1,15 @@
 #ifndef HISTORY_H
 #define HISTORY_H
 
-#include <memory>
 #include <vector>
 
+#include "IHistory.h"
 #include "command/IUndoableCommand.h"
 
-class History
+class History final : public IHistory
 {
 public:
-    void AddCommand(std::unique_ptr<IUndoableCommand> &&command)
+    void AddCommand(std::unique_ptr<IUndoableCommand> &&command) override
     {
         if (m_undoStack.size() >= m_maxSize)
         {
@@ -19,7 +19,7 @@ public:
         m_redoStack.clear();
     }
 
-    void Undo()
+    void Undo() override
     {
         if (!CanUndo())
         {
@@ -35,7 +35,7 @@ public:
         m_redoStack.push_back(std::move(command));
     }
 
-    void Redo()
+    void Redo() override
     {
         if (!CanRedo())
         {
@@ -51,9 +51,9 @@ public:
         m_undoStack.push_back(std::move(command));
     }
 
-    [[nodiscard]] bool CanUndo() const { return !m_undoStack.empty(); }
+    [[nodiscard]] bool CanUndo() const override { return !m_undoStack.empty(); }
 
-    [[nodiscard]] bool CanRedo() const { return !m_redoStack.empty(); }
+    [[nodiscard]] bool CanRedo() const override { return !m_redoStack.empty(); }
 
 
 private:

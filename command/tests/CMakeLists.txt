@@ -20,6 +20,7 @@ add_executable(
         MockCommand.h
         MockDocument.h
         MockExporter.h
+        MockHistory.h
         MockImage.h
         MockMenu.h
         MockParagraph.h
@@ -27,6 +28,7 @@ add_executable(
         Paragraph.cpp
         command/Exit.cpp
         command/Help.cpp
+        command/Undo.cpp
 )
 target_link_libraries(command_tests GTest::gtest_main GTest::gmock_main)
 
