@@ -5,4 +5,5 @@ add_executable(
         IDocument.h
         IImage.h
         IParagraph.h
+        Paragraph.h
 )
