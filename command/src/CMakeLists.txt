@@ -1,6 +1,7 @@
 add_executable(
         command
         main.cpp
+        History.h
         IExporter.h
         Menu.h
         command/DocumentCommand.h

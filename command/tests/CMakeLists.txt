@@ -14,6 +14,7 @@ add_executable(
         command_tests
         Document.cpp
         DocumentItem.cpp
+        History.cpp
         Image.cpp
         Menu.cpp
         MockCommand.h

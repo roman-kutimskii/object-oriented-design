@@ -4,9 +4,10 @@
 #include "../src/command/IUndoableCommand.h"
 #include "MockCommand.h"
 
-class MockUndoableCommand : public MockCommand, public IUndoableCommand
+class MockUndoableCommand : public IUndoableCommand
 {
 public:
+    MOCK_METHOD(void, Execute, (), (override));
     MOCK_METHOD(void, Unexecute, (), (override));
 };
 
