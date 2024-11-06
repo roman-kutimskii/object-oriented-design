@@ -10,7 +10,9 @@ class MockMenu : public IMenu
 public:
     MOCK_METHOD(
         void, AddItem,
-        (const std::string &shortcut, const std::string &description, std::unique_ptr<ICommand> &&command), (override)
+        (const std::string &shortcut, const std::string &description,
+         std::function<std::unique_ptr<ICommand>()> commandConstructor),
+        (override)
     );
     MOCK_METHOD(void, Run, (), (override));
     MOCK_METHOD(void, ShowInstructions, (), (const, override));

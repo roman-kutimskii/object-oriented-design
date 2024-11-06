@@ -12,7 +12,10 @@ add_executable(
         command/HistoryCommand.h
         command/ICommand.h
         command/IUndoableCommand.h
+        command/InsertParagraph.h
+        command/List.h
         command/MenuCommand.h
+        command/Redo.h
         command/Undo.h
         document/Document.h
         document/DocumentItem.h
@@ -21,7 +24,4 @@ add_executable(
         document/IParagraph.h
         document/Image.h
         document/Paragraph.h
-        command/Redo.h
-        command/List.h
-        command/InsertParagraph.h
 )

@@ -18,7 +18,7 @@ public:
     MOCK_METHOD(void, DeleteItem, (size_t position), (override));
     MOCK_METHOD(const std::string &, GetTitle, (), (const, override));
     MOCK_METHOD(void, SetTitle, (const std::string &title), (override));
-    MOCK_METHOD(void, Save, (const std::string &path, const IExporter &exporter), (const, override));
+    MOCK_METHOD(void, Save, (const std::string &path, const IExporter *exporter), (const, override));
     MOCK_METHOD(void, SetDeleted, (size_t position, bool value), (override));
 };
 
