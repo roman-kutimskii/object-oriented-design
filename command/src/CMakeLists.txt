@@ -2,11 +2,14 @@ add_executable(
         command
         main.cpp
         Document.h
+        DocumentCommand.h
         DocumentItem.h
+        ICommand.h
         IDocument.h
         IExporter.h
         IImage.h
         IParagraph.h
+        IUndoableCommand.h
         Image.h
         Paragraph.h
 )
