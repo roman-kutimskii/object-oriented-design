@@ -13,6 +13,7 @@ enable_testing()
 add_executable(
         command_tests
         main.cpp
+        MockImage.h
 )
 target_link_libraries(command_tests GTest::gtest_main GTest::gmock_main)
 
