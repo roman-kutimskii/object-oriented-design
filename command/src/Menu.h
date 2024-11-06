@@ -10,7 +10,7 @@
 #include "IMenu.h"
 #include "command/ICommand.h"
 
-class Menu : public IMenu
+class Menu final : public IMenu
 {
 public:
     explicit Menu(std::istream &input = std::cin, std::ostream &output = std::cout) : m_input(input), m_output(output)
@@ -41,6 +41,8 @@ public:
     }
 
     void Exit() override { m_exit = true; }
+
+    void Write(const std::string &text) const override { m_output << text << std::endl; }
 
 private:
     struct Item

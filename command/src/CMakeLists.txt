@@ -22,4 +22,5 @@ add_executable(
         document/Image.h
         document/Paragraph.h
         command/Redo.h
+        command/List.h
 )
