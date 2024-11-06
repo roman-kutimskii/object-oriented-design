@@ -7,4 +7,5 @@ add_executable(
         IParagraph.h
         Image.h
         Paragraph.h
+        IExporter.h
 )

@@ -18,6 +18,7 @@ add_executable(
         MockImage.h
         MockParagraph.h
         Paragraph.cpp
+        MockExporter.h
 )
 target_link_libraries(command_tests GTest::gtest_main GTest::gmock_main)
 
