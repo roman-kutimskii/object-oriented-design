@@ -8,28 +8,9 @@ namespace Command
     class InsertParagraph final : public DocumentCommand
     {
     public:
-        explicit InsertParagraph(IDocument *document, IMenu *menu) : DocumentCommand(document, menu) {}
+        explicit InsertParagraph(IDocument *document) : DocumentCommand(document) {}
 
-        void Execute() override
-        {
-            if (!m_initialized)
-            {
-                std::istringstream arguments(m_menu->ReadArguments());
-                std::string position;
-                getline(arguments, position, ' ');
-                if (position == "end")
-                {
-                    m_position = std::nullopt;
-                }
-                else
-                {
-                    m_position = std::stoi(position);
-                }
-                getline(arguments, m_text);
-                m_initialized = true;
-            }
-            m_document->InsertParagraph(m_text, m_position);
-        }
+        void Execute() override { m_document->InsertParagraph(m_text, m_position); }
 
         void Unexecute() override
         {

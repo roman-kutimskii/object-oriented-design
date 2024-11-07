@@ -7,12 +7,10 @@
 class DocumentCommand : public IUndoableCommand
 {
 public:
-    explicit DocumentCommand(IDocument *document, IMenu *menu) : m_document(document), m_menu(menu) {}
+    explicit DocumentCommand(IDocument *document) : m_document(document) {}
 
 protected:
     IDocument *m_document;
-    IMenu *m_menu;
-    bool m_initialized = false;
 };
 
 #endif // DOCUMENTCOMMAND_H
