@@ -95,14 +95,10 @@ private:
                         std::unique_ptr<IUndoableCommand>(static_cast<IUndoableCommand *>(commandPtr.release()))
                     );
                 }
-                else
-                {
-                    m_errors << "Command is not undoable" << std::endl;
-                }
             }
             else
             {
-                m_errors << "Failed to create command" << std::endl;
+                m_errors << "Failed to create command " << it->get()->shortcut << std::endl;
             }
         }
         else
