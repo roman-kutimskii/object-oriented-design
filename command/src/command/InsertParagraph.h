@@ -1,6 +1,8 @@
 #ifndef INSERTPARAGRAPH_H
 #define INSERTPARAGRAPH_H
 
+#include <utility>
+
 #include "DocumentCommand.h"
 
 namespace Command
@@ -8,7 +10,13 @@ namespace Command
     class InsertParagraph final : public DocumentCommand
     {
     public:
-        explicit InsertParagraph(IDocument *document) : DocumentCommand(document) {}
+        explicit
+        InsertParagraph(IDocument *document, std::string text, const std::optional<size_t> position = std::nullopt) :
+            DocumentCommand(document),
+            m_text(std::move(text)),
+            m_position(position)
+        {
+        }
 
         void Execute() override { m_document->InsertParagraph(m_text, m_position); }
 
@@ -26,7 +34,7 @@ namespace Command
 
     private:
         std::string m_text;
-        std::optional<size_t> m_position = std::nullopt;
+        std::optional<size_t> m_position;
     };
 } // namespace Command
 
