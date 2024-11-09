@@ -16,11 +16,11 @@ class CommandHandler
 public:
     CommandHandler(IMenu *menu, IHistory *history, IDocument *document)
     {
-        menu->AddItem("help", "Show instructions", [&]() { return std::make_unique<Command::Help>(menu); });
-        menu->AddItem("exit", "Exit from this menu", [&]() { return std::make_unique<Command::Exit>(menu); });
-        menu->AddItem("undo", "Undo last command", [&]() { return std::make_unique<Command::Undo>(history); });
-        menu->AddItem("redo", "Redo last command", [&]() { return std::make_unique<Command::Redo>(history); });
-        menu->AddItem("list", "List all items", [&]() { return std::make_unique<Command::List>(menu, document); });
+        menu->AddItem("help", "Show instructions", [=]() { return std::make_unique<Command::Help>(menu); });
+        menu->AddItem("exit", "Exit from this menu", [=]() { return std::make_unique<Command::Exit>(menu); });
+        menu->AddItem("undo", "Undo last command", [=]() { return std::make_unique<Command::Undo>(history); });
+        menu->AddItem("redo", "Redo last command", [=]() { return std::make_unique<Command::Redo>(history); });
+        menu->AddItem("list", "List all items", [=]() { return std::make_unique<Command::List>(menu, document); });
         menu->AddItem(
             "insert_paragraph", "Insert paragraph. Arguments: <position>|end <text>", InsertParagraph(document, menu)
         );
@@ -29,7 +29,7 @@ public:
 private:
     static std::function<std::unique_ptr<ICommand>()> InsertParagraph(IDocument *document, const IMenu *menu)
     {
-        return [&]()
+        return [=]()
         {
             std::istringstream arguments(menu->ReadArguments());
             std::string positionStr;
